@@ -66,15 +66,20 @@ Pour récupérer les données de la database, il y a **2 façons** de faire :
 
 ### Récupérer les données de la database du site en ligne
 
-> ⚠️ Pour cette solution, il est impératif d'être invité en tant que collaborateur sur **Heroku**
+> ⚠️ Pour cette solution, il est impératif d'être invité en tant que collaborateur sur **Scalingo**, ensuite connectez vos avec `scalingo login`
 
+Ensuite execute cette site de commandes pour `dump` la base de donnée prod, un fichier `dump.sql` sera créé dans le dossier du projet.
 ```bash
-rails db:drop "Makyma_development" 
+DATABASE_URL="$(scalingo --app makyma env | grep POSTGRESQL | cut -d '=' -f2- | sed -n 2p)"
+pg_dump --clean --if-exists --format c --dbname $DATABASE_URL --no-owner --no-privileges --no-comments --exclude-schema 'information_schema' --exclude-schema '^pg_*' --file dump.pgsql
 ```
 
+Il va maintenant falloir `restore` sur la database locale.
 ```bash
-heroku pg:pull postgresql-aerodynamic-10743 Makyma_development --app makyma
+pg_restore --clean --if-exists --no-owner --no-privileges --no-comments --dbname <URL_DE_VOTRE_DB_LOCAL> dump.pgsql
 ```
+
+Vous pouvez ensuite supprimer le fichier `dump.pgsql`
 
 ### Récupérer les données de la database du site local
 
@@ -87,7 +92,7 @@ rails makyma:import
 #### Créer les comptes admin
 
 ```bash
-rails makyma:admin
+ADMIN_EMAIL="<your_email>" ADMIN_PASSWORD="<password>" rails makyma:admin
 ```
 
 ## Référencement du site ⭐
