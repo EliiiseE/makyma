@@ -1,6 +1,6 @@
 <%= render 'header'%>
 <div class="container mb-0">
-  <div class="flex-column-reverse flex-md-row  mb-3 justify-content-between d-flex align-items-center ">
+  <div class="flex-column-reverse hero-inside flex-md-row  mb-3 justify-content-between d-flex align-items-center ">
     <div class="d-inline-block">
       <h2 class="w-100">Explore les<br/> <%= @alternatives.count %> alternatives <br/> éco-responsable <%= image_tag asset_path('plant.png'), class: "img-fluid", alt: "Emoji plante" %></h2>
       <p>Pour t’aider dans ta transition écologique quotidienne <%= image_tag asset_path('smile.png'), class: "img-fluid", alt: "Emoji content" %></p>
@@ -33,7 +33,7 @@
     <% @categories.each do |category| %>
       <div class="mr-2">
         <%= link_to categories_path(page: 1, filter: category.id.to_s, refresh: true), class: 'filter', remote: true do %>
-          <div class="card category shadow-sm mb-4 border-info d-inline-block">
+          <div class="card category shadow-sm mb-3 border-info d-inline-block">
             <div class="card-body ">
               <div class="row align-items-center">
                 <div class="img">
@@ -122,7 +122,7 @@
   <div class="row offset-md-1 mt-5 position-relative pb-5">
     <div class="col-md-7 mt-5 pb-5">
       <h2 class="text-primary">Qui sommes-nous ?</h2>
-      <p class="text-secondary mt-4 mb-5">Makyma permet d’accompagner ta transition écologique le plus facilement possible. 
+      <p class="text-secondary mt-4 mb-5 about-section-text">Makyma permet d’accompagner ta transition écologique le plus facilement possible. 
       Avec une utilisation facile pour tout le monde, même ta grand-mère peut y arriver ! 
       Choisis d’acheter en ligne ou de le faire par toi même. 
       Tu choisis ce que tu préfères !</p>
