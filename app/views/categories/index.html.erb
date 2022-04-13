@@ -48,6 +48,19 @@
         <% end %>
       </div>
     <% end %>
+    <div class="mr-2">
+      <%= link_to categories_path(page: 1, refresh: true), class: 'filter', remote: true do %>
+        <div class="card category shadow-sm mb-3 border-info d-inline-block">
+          <div class="card-body ">
+            <div class="row align-items-center">
+              <div>
+                <p class="name-category text-info mb-0 d-inline">Toutes les alternatives</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+      </div>
   </div>
 
   <% if can? :manage, @category %>
