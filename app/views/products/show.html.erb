@@ -6,7 +6,7 @@
 <div class="container">
   <div class="row mb-5 offset-md-2">
     <div class="col-md-12">
-      <h2 class="text-primary">Voici nos alternatives 👇🏼</h2>
+      <h1 class="text-primary"><%= @product %></h1>
     </div>
   </div>
   <div class="row justify-content-center align-items-center mt-5 alternative-container">
@@ -37,7 +37,12 @@
         </div>
         <div class="col-md-6">
           <div class="d-flex justify-content-center align-items-center mb-4 mb-md-5 mt-5">
-            <%= cl_image_tag alternative.image.key, :quality => "auto", :fetch_format => :auto, :crop => "scale", class: "img-fluid rounded w-100", alt: "Image correspondant à l'aternative #{alternative.title}" %>
+            <%= cl_image_tag  alternative.image.key, 
+                              quality: "auto", 
+                              fetch_format: :auto, 
+                              crop: "scale", 
+                              class: "img-fluid rounded w-100", 
+                              alt: "Image correspondant à l'aternative #{alternative.title}" if alternative.image.attached? %>
           </div>
         </div>
       </div>
