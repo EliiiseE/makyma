@@ -4,18 +4,14 @@
             count: @product.alternatives.count %>
 
 <div class="container">
-  <div class="row mb-5 offset-md-2">
-    <div class="col-md-12">
-      <h1 class="text-primary"><%= @product %></h1>
-    </div>
-  </div>
-  <div class="row justify-content-center align-items-center mt-5 alternative-container">
+  <h1 class="text-primary mt-4"><%= @product %></h1>
+  <div class="row justify-content-center align-items-center mt-4 alternative-container">
     <% @product.alternatives.sort{|a,b| a.title <=> b.title}.each do |alternative| %>
       <div class="d-flex justify-content-center align-items-center flex-column-reverse flex-md-row">
-        <div class="col-md-6 text-container mb-5 mb-md-5 mb-lg-0 mt-0 mt-md-5 mt-lg-0">
+        <div class="col-md-6 text-container mb-5  mb-lg-0 mt-0 mt-lg-0">
           <div class="header-alternative row justify-content-between align-items-center mb-3">
             <h3 class="text-primary mb-0"><%= alternative.title %></h3>
-            <p class="filter text-primary mb-0">
+            <div class="filter text-primary mb-0">
             <% if alternative.alternative_type_filter.to_s == 'En ligne' %>
               <span>🛒</span>
             <% end %>
@@ -23,7 +19,7 @@
               <span>✂️</span>
             <% end %>
             <%= alternative.alternative_type_filter %>
-            </p>
+            </div>
           </div>
           <p class="text-secondary mb-4"><%= alternative.description %></p>
           <h3 class="text-primary mb-3">Où trouver ?</h3>

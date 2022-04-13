@@ -21,7 +21,7 @@
         <div class="col-md-6 text-container mb-5 mb-md-5 mb-lg-0 mt-0 mt-md-5 mt-lg-0">
           <div class="header-alternative row justify-content-between align-items-center mb-3">
             <h3 class="text-primary mb-0"><%= alternative.title %></h3>
-            <p class="filter text-primary mb-0">
+            <div class="filter text-primary mb-0">
             <% if alternative.alternative_type_filter.to_s == 'En ligne' %>
               <span>🛒</span>
             <% end %>
@@ -32,7 +32,7 @@
               <span>🚲</span>
             <% end %>
             <%= alternative.alternative_type_filter %>
-            </p>
+            </div>
           </div>
           <p class="text-secondary mb-4"><%= alternative.description %></p>
           <h3 class="text-primary mb-3">Où trouver ?</h3>
