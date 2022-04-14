@@ -37,8 +37,9 @@
                               quality: "auto", 
                               fetch_format: :auto, 
                               crop: "scale", 
+                              loading: 'lazy',
                               class: "img-fluid rounded w-100", 
-                              alt: "Image correspondant à l'aternative #{alternative.title}" if alternative.image.attached? %>
+                              alt: "Image correspondant à l'aternative #{alternative.title}" if alternative.respond_to?(:image) && alternative.image.respond_to?(:key) %>
           </div>
         </div>
       </div>

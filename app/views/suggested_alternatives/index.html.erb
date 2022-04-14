@@ -28,7 +28,7 @@
           <td class="text-break text-secondary"><%= suggested_alternative.find %></td>
           <td class="text-break text-secondary"><%= suggested_alternative.source %></td>
           <td class="text-break text-secondary">
-            <%= cl_image_tag suggested_alternative.image.key, :quality => "auto", :fetch_format => :auto, :crop => "scale", :height => "100", alt: "Image correspondant à l'aternative #{suggested_alternative.title}" %>
+            <%= cl_image_tag suggested_alternative.image.key, loading: 'lazy', :quality => "auto", :fetch_format => :auto, :crop => "scale", :height => "100", alt: "Image correspondant à l'aternative #{suggested_alternative.title}", loading: "lazy" if alternative.respond_to?(:image) && alternative.image.respond_to?(:key) %>
           </td>
           <td class="d-flex align-items-center justify-content-center">
             <%= link_to "👀", suggested_alternative, class: 'button admin text-info border-info border rounded pt-2 pb-2 pl-2 pr-2 shadow-sm' %>
