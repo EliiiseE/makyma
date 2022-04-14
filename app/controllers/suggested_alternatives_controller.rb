@@ -5,7 +5,7 @@ class SuggestedAlternativesController < ApplicationController
     result = SuggestedAlternative.find( params[:id] )
     alternative = Alternative.create(result.attributes.except("id"))
     result.destroy
-    redirect_to action: 'index'
+    redirect_to alternative
   end
 
   # GET /suggested_alternatives or /suggested_alternatives.json
@@ -39,15 +39,15 @@ class SuggestedAlternativesController < ApplicationController
   # SuggestedAlternativesController 
   # POST /suggested_alternatives or /suggested_alternatives.json
   def create
-    @suggested_alternative = SuggestedAlternative.new(suggested_alternative_params)
 		add_breadcrumb 'Propose une alternative'
+    @suggested_alternative = SuggestedAlternative.new(suggested_alternative_params)
 
     respond_to do |format|
       if @suggested_alternative.save
 
         MakymaNoticeMailer.suggested_alternative_email.deliver_later #send notif mail to makyma team
 
-        format.html { redirect_to root_path, notice: "Suggested alternative was successfully created." }
+        format.html { redirect_to @suggested_alternative, notice: "Suggested alternative was successfully created." }
         format.json { render :show, status: :created, location: @suggested_alternative }
       else
         format.html { render :new, status: :unprocessable_entity }
