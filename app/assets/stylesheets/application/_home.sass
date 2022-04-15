@@ -1,139 +1,201 @@
 .container
-	h2
-		font-size: 49px
-		font-weight: 500
+  h2
+    font-size: 49px
+    font-weight: 500
 
-		@media screen and (max-width: 576px)
-			font-size: 29px
+    @media screen and (max-width: 576px)
+      font-size: 29px
 
-		img
-			width: 40px
-	p
-		padding: 20px 0
-		font-size: 18px
-		font-weight: 500
-		img
-			width: 20px
-	.left-part
-		position: relative
-		.twitter-hero
-			height: 38px
-			width: 40px
-			display: block
-			position: absolute
-			background: #ff000038
-			right: 71px
-			top: 109px
-		img
-			width: 550px
+    img
+      width: 40px
+  p
+    padding: 20px 0
+    font-size: 18px
+    font-weight: 500
+    img
+      width: 20px
+  .left-part
+    position: relative
+    img
+      width: 550px
 
 .hero-inside
-	p
-		color: #6c6c6c
-		font-weight: 400
+  p
+    color: #6c6c6c
+    font-weight: 400
 
-@media screen and ( min-width: 992px	)
-	.hero-inside
-		max-height: 480px
+  .tiktok-hero, .twitter-hero, .facebook-hero, .instagram-hero
+    display: block
+    position: absolute
+
+@media screen and ( min-width: 1200px	)
+  .hero-inside
+    max-height: 480px
+
+.instagram-hero
+  height: 7.3%
+  width: 7.27%
+  right: 13%
+  top: 21%
+.tiktok-hero
+  height: 7.3%
+  width: 7.27%
+  right: 13%
+  top: 28%
+.twitter-hero
+  height: 7.3%
+  width: 7.27%
+  right: 13%
+  top: 35%
+.facebook-hero
+  height: 5.5%
+  width: 7%
+  right: 13%
+  top: 43%
+
+// @media screen and ( min-width: 992px	) and  ( max-width: 1200px	)
+//   .instagram-hero
+//     height: 31px
+//     width: 30px
+//     right: 64px
+//     top: 94px
+//   .tiktok-hero
+//     height: 26px
+//     width: 31px
+//     right: 63px
+//     top: 129px
+//   .twitter-hero
+//     height: 30px
+//     width: 30px
+//     right: 62px
+//     top: 158px
+//   .facebook-hero
+//     height: 30px
+//     width: 30px
+//     right: 63px
+//     top: 190px
+
+// @media screen and ( max-width: 768px	)
+//   .instagram-hero
+//     height: 31px
+//     width: 30px
+//     right: 64px
+//     top: 94px
+//   .tiktok-hero
+//     height: 26px
+//     width: 31px
+//     right: 63px
+//     top: 129px
+//   .twitter-hero
+//     height: 30px
+//     width: 30px
+//     right: 62px
+//     top: 158px
+//   .facebook-hero
+//     height: 30px
+//     width: 30px
+//     right: 63px
+//     top: 190px
+    
 
 .product-card
-	img
-		width: 250px
-		height: 250px
-		object-fit: cover
+  img
+    width: 250px
+    height: 250px
+    object-fit: cover
 
-		@media screen and ( max-width: 576px	)
-			width: 100%
-	a
-		color: inherit
-		&:hover
-			color: inherit
+    @media screen and ( max-width: 576px	)
+      width: 100%
+  a
+    color: inherit
+    &:hover
+      color: inherit
 
 #show-more-button
-	cursor: pointer
-	transition: background .4s ease, color .4s ease
-	user-select: none
-	&:hover, &:focus,
-		background: $info
-		color: $light !important
-		
+  cursor: pointer
+  transition: background .4s ease, color .4s ease
+  user-select: none
+  &:hover, &:focus,
+    background: $info
+    color: $light !important
+    
 .products_card
-	margin-top: 34px
+  margin-top: 34px
 
 .category
-	border-width: 2px
-	border-radius: 100px
-	transition: background .4s ease
-	user-select: none
-	&:hover, &:focus, &.active
-		background: $info
-		.name-category
-			color: $light !important
+  border-width: 2px
+  border-radius: 100px
+  transition: background .4s ease
+  user-select: none
+  &:hover, &:focus, &.active
+    background: $info
+    .name-category
+      color: $light !important
 
-	.card-body
-		padding: 10px 30px
+  .card-body
+    padding: 10px 30px
 
-		.img
-			margin-right: 10px
-	img
-		width: 20px
-		height: auto
+    .img
+      margin-right: 10px
+  img
+    width: 20px
+    height: auto
 
-	.name-category
-		font-size: 16px
-		font-weight: 400
-		letter-spacing: 0.5px
-		transition: color .4s ease
+  .name-category
+    font-size: 16px
+    font-weight: 400
+    letter-spacing: 0.5px
+    transition: color .4s ease
 
 .icon
-	span
-		font-size: 20px
-		margin: 6px 5px 0px 0
+  span
+    font-size: 20px
+    margin: 6px 5px 0px 0
 
 .description
-	margin-top: 4px
-	h4
-		margin: 0
-		font-size: 18px
-	p
-		font-size: 16px
-		padding-right: 20px
-		font-weight: 400
-		color: #5c5c5c
+  margin-top: 4px
+  h4
+    margin: 0
+    font-size: 18px
+  p
+    font-size: 16px
+    padding-right: 20px
+    font-weight: 400
+    color: #5c5c5c
 
 .partner-container
-	margin-top: 72px
-	h2
-		font-size: 30px
-	.partner
-		img
-			width: 50%
-			// @media screen and ( min-width: 576px )
-			// 	width: 75%
-		a
-			filter: grayscale(100%)
-			transition: filter .4s ease
-			&:hover, &:focus
-				filter: grayscale(0)
-				&::before
-					width: 0
+  margin-top: 72px
+  h2
+    font-size: 30px
+  .partner
+    img
+      width: 50%
+      // @media screen and ( min-width: 576px )
+      // 	width: 75%
+    a
+      filter: grayscale(100%)
+      transition: filter .4s ease
+      &:hover, &:focus
+        filter: grayscale(0)
+        &::before
+          width: 0
 
 .about-container
-	max-width: none
-	background: rgba($primary, .05) !important
-	clip-path: url('#aboutClip')
-	transform: translateY(40px)
+  max-width: none
+  background: rgba($primary, .05) !important
+  clip-path: url('#aboutClip')
+  transform: translateY(40px)
 
-	a
-		font-weight: 600
-		&:hover, &:focus
-			color: $light !important
+  a
+    font-weight: 600
+    &:hover, &:focus
+      color: $light !important
 
-	.about-section-text
-		font-weight: 400
+  .about-section-text
+    font-weight: 400
 
-	.logo-footer
-		opacity: .15
-		z-index: -1
-		img
-			height: 450px
+  .logo-footer
+    opacity: .15
+    z-index: -1
+    img
+      height: 450px
