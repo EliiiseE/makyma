@@ -39,7 +39,16 @@
       </div>
       <div class="col-md-6">
         <div class="d-flex justify-content-center align-items-center mb-4 mb-md-4 mt-4">
-          <%= cl_image_tag @alternative.image.key, :quality => "auto", :fetch_format => :auto, :crop => "scale", class: "img-fluid rounded w-100", loading: "lazy", alt: "Image correspondant à l'aternative #{@alternative.title}" if @alternative.respond_to?(:image) && @alternative.image.respond_to?(:key) %>
+          <%= cl_image_tag @alternative.image.key, 
+                  quality: "90", 
+                  fetch_format: :auto, 
+                  crop: "fill", 
+                  loading: 'lazy',
+                  width: 600,
+                  height: 600,
+                  class: "img-fluid rounded w-100", 
+                  alt: "Image correspondant à l'aternative #{@alternative.title}" if @alternative.respond_to?(:image) && @alternative.image.respond_to?(:key) %>
+
         </div>
       </div>
     </div>

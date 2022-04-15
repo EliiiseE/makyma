@@ -16,7 +16,9 @@
           <%= cl_image_tag  alternative.image.key,
                             quality: "auto", 
                             fetch_format: :auto, 
-                            crop: "scale", 
+                            crop: "fill", 
+                            height: 250,
+                            width: 250,
                             class: "img-fluid rounded", 
                             alt: "Image correspondant à l'alternative #{alternative}" %>
         <% end %>
@@ -38,7 +40,7 @@
           <% end %>
         </div>
         <div class="description">
-          <h4><%= product.title %></h4>
+          <h3><%= product.title %></h3>
           <p><%= product.alternatives.count %> alternative<%= 's' if product.alternatives.count > 1%> trouvée<%= 's' if product.alternatives.count > 1%> 🌱</p>
         </div>
       </div>
