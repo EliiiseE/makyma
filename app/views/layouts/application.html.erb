@@ -21,7 +21,6 @@
   <% end %>
 
     <!-- Generate by rails -->
-    <%= favicon_link_tag asset_path('favicon/favicon.ico') %>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -34,16 +33,14 @@
     <meta name="apple-mobile-web-app-title" content="Makyma - Ton compagnon écoresponsable">
 
     <!-- Icons -->
-    <link rel="apple-touch-icon" href="<%= asset_path('favicon/apple-touch-icon.png') %>" />
-    <link rel="apple-touch-icon" sizes="57x57" href="<%= asset_path('favicon/apple-touch-icon-57x57.png') %>" />
-    <link rel="apple-touch-icon" sizes="72x72" href="<%= asset_path('favicon/apple-touch-icon-72x72.png') %>" />
-    <link rel="apple-touch-icon" sizes="76x76" href="<%= asset_path('favicon/apple-touch-icon-76x76.png') %>" />
-    <link rel="apple-touch-icon" sizes="114x114" href="<%= asset_path('favicon/apple-touch-icon-114x114.png') %>" />
-    <link rel="apple-touch-icon" sizes="120x120" href="<%= asset_path('favicon/apple-touch-icon-120x120.png') %>" />
-    <link rel="apple-touch-icon" sizes="144x144" href="<%= asset_path('favicon/apple-touch-icon-144x144.png') %>" />
-    <link rel="apple-touch-icon" sizes="152x152" href="<%= asset_path('favicon/apple-touch-icon-152x152.png') %>" />
-    <link rel="apple-touch-icon" sizes="180x180" href="<%= asset_path('favicon/apple-touch-icon-180x180.png') %>" />
-
+    <link rel="icon" href="/favicon.ico"/>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"/>
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"/>
+    <link rel="manifest" href="/site.webmanifest"/>
+    <meta name="msapplication-config" content="/browserconfig.xml" />
+    <meta name="msapplication-TileColor" content="#ffffff"/>
+    <meta name="theme-color" content="#ffffff"/>
     <!-- SEO -->
   <% if @product then %>
     <!-- Description automatique en fonction de tous les produits de la page -->
@@ -63,7 +60,7 @@
     <meta http-equiv="Cache-control" content="public" />
 
     <meta name="keywords" content="makyma, alternatives, durable, écoresponsable, transition, écologique, développement, environnement, consommation, nature, responsable, écologie, planète" />
-    <meta name="Author" content="Sami LAFRANCE, Hugo BLANCHARD, Nicolas MAITRE, Tom SOULIÉ, Leo MELLE, Hugo FAUGEROUX, Elise ECHASSERIAU, Adel SANAA, Anaïs MANCHO, Clément RENOU, Gabriel ROULEAU" />
+    <meta name="Author" content="Sami LAFRANCE, Hugo BLANCHARD, Nicolas MAITRE, Tom SOULIÉ, Leo MELLE, Hugo FAUGEROUX, Elise ECHASSERIAU, Adel SANAA, Anaïs MANCHO, Clément RENOU, Gabriel ROULEAU, Alexandra Mallard, Candice Fradet, Clara Manhes, Chloé Leruez, Clément Calles, Clément Vives, Lucile Gouvenel, Matéo Simonet, Mattèo Gauthier, Vanon Borget" />
     <meta name="Generator" content="Ruby on Rails" />
     <meta name="Identifier-URL" content="https://www.makyma.org" />
     <meta name="Distribution" content="global" />
@@ -81,8 +78,8 @@
     <meta property="og:url" content="<%= request.original_url %>">
     <meta property="og:image" content="https://www.makyma.org<%= asset_path('logo_og.png') %>">
     <meta property="og:image:secure_url" content="https://www.makyma.org<%= asset_path('logo_og.png') %>" />
-    <meta property="og:image:width" content="200" />
-    <meta property="og:image:height" content="200" />
+    <meta property="og:image:width" content="256" />
+    <meta property="og:image:height" content="256" />
   <% if @product then %>
     <!-- Description automatique en fonction de tous les produits de la page -->
   <% elsif @category then %>
@@ -119,8 +116,9 @@
     <meta name="twitter:image" content="https://www.makyma.org<%= asset_path('logo_og.png') %>" />
     <meta name="twitter:image:alt" content="Logo du site web makyma.org" />
 
-    <link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,500,600,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v2.0.1/css/unicons.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:300,300i,400,500,600,700&display=swap" rel="stylesheet">
   </head>
 
   <body class="<%= controller_name %> <%= action_name %>">
