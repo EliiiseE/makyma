@@ -7,7 +7,7 @@
   <h1 class="text-primary product-top-title"><%= @product %></h1>
   <div class="row justify-content-center align-items-center mt-3 alternative-container">
     <% @product.alternatives.sort{|a,b| a.title <=> b.title}.each do |alternative| %>
-      <div class="d-flex justify-content-center align-items-center flex-column-reverse flex-md-row">
+      <div class="d-flex justify-content-center align-items-center flex-column-reverse flex-md-row mb-5">
         <div class="col-md-6 text-container mb-5  mb-lg-0 mt-0 mt-lg-0">
           <div class="header-alternative row justify-content-between align-items-center mb-3">
             <h3 class="text-primary product-title mb-0"><%= alternative.title %></h3>
